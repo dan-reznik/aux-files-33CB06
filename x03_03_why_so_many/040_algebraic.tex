@@ -1,0 +1,240 @@
+Our use of a few dozen centers listed in \cite{etc} was a means to validate our approach. In general we would like to predict locus type based on any triangle function, hand-curated or not. Below we take a few steps toward building a practical Computational Algebraic Geometry context useful for practitioners.
+
+\subsection{Trilinears: No Apparent Pattern}
+
+When one looks at a few examples of Triangle Centers whose loci are elliptic vs non, one finds no apparent algebraic pattern in said Trilinears, Table~\ref{tab:center-trilinears}. 
+
+\begin{table}[H]
+\scriptsize
+\begin{tabular}{|c|l|l|}
+\hline
+center & name & $h(s_1,s_2,s_3)$ \\
+\hline
+$X_{1}$ & Incenter & $1$ \\
+$X_{2}$ & Centroid & $1/s_1$  \\
+$X_{3}$ & Circumcenter & $s_1(s_2^2+s_3^2-s_1^2)$  \\
+$X_{4}$ & Orthocenter & $1/[s_1(s_2^2+s_3^2-s_1^2)]$ \\
+$X_{5}$ & 9-Point Center & ${s_2}{s_3}[s_1^2(s_2^2+s_3^2)-(s_2^2-s_3^2)^2]$ \\
+$X_{11}$ & Feuerbach Point &  ${s_2}{s_3}(s_2+s_3-s_1)(s_2-s_3)^2$ \\
+$X_{88}$ & Isog. Conjug. of $X_{44}$ & $1/(s_2+s_3-2{s_1})$ \\
+$X_{100}$ & Anticomplement of $X_{11}$ & $1/(s_2-s_3)$  \\ 
+\hline
+$\mathbf{X_{6}}$ & \textbf{Symmedian Point} & $\mathbf{s_1}$  \\
+$\mathbf{X_{13}^*}$ & \textbf{Fermat Point} & $\mathbf{s_1^4 - 2(s_2^2 - s_3^2)^2 + s_1^2(s_2^2 + s_3^2 + 4\sqrt{3}A)}$ \\
+$\mathbf{X_{15}^*}$ & \textbf{2nd Isodynamic Point} & $\mathbf{s_1[\sqrt{3}(s_1^2 - s_2^2 - s_3^2) - 4 A]}$ \\
+$\mathbf{X_{19}}$ & \textbf{Clawson Point} & $\mathbf{1/(s_2^2 + s_3^2 - s_1^2)}$ \\ 
+$\mathbf{X_{37}}$ & \textbf{Crosspoint of $\mathbf{X_{1},X_{2}}$} & $\mathbf{s_2+s_3}$ \\
+$\mathbf{X_{59}}$ & \textbf{Isog. Conj. of $\mathbf{X_{11}}$} & $\mathbf{1/[{s_2}{s_3}(s_2+s_3-s_1)(s_2-s_3)^2]}$ \\
+\hline
+$X_{9}$ & \text{Mittenpunkt} & $s_2+s_3-s_1$ \\
+\hline
+\end{tabular}
+\caption{Triangle Center Function $h$ for a few selected $X_i$'s, taken from \cite{etc}. The first 8 centers produce elliptic loci, whereas the remainder (\textbf{boldfaced}) do not. $X_{13}$ and $X_{15}$ are {\em starred} to indicate their Trilinears are irrational: these contain $A$, the area the triangle, known (e.g., from Heron's formula) to be irrational on the sidelengths. We haven't yet detected an algebraic pattern which differentiates both groups, nor have wre detected an irrational Center whose locus is elliptic. Regarding the last row, the Mittenpunkt, we don't consider its locus to be elliptic since it degenerates to a point at the EB center.}
+\label{tab:center-trilinears}
+\end{table}
+
+A few observations include:
+
+\begin{itemize}
+\item The locus of a Triangle Center is symmetric about both EB axes, Lemma~\ref{lem:axisymmetric}, Section~\ref{sec:algebraic}.
+\item There are Trilinears Centers rational on the sidelengths which produce (i) elliptic loci (e.g., $X_1,X_2$, etc.) as well as (ii) non-elliptic (e.g., $X_6$, $X_{19}$, etc.).
+\item No locus has been found with more than 6 intersections with a straight line, suggesting the degree is at most 6.
+\item No Center has been found with irrational Trilinears whose locus is an ellipse\footnote{Not shown, but also tested were irrational  Triangle Centers $X_j$, $j=14,\,16,\,17,\,18,\,359,\,360,\,364,\,365,\,367$.}, suggesting that the locus of irrational Centers is always non-elliptic.
+\end{itemize}
+
+\subsection{An Algebro-Geometric Ambient}
+
+Given EB semi-axes $a,b$, our pro\-blem can be described by the following 14 variables:
+
+\begin{itemize}
+
+\item  6 triangle vertex coordinates, $P_i= (x_i, y_i), \, i=1,2,3$; 
+
+\item 3 sidelengths $s_1, s_2, s_3$;
+
+\item 3 Trilinears  $p,q,r$;
+\item  2 locus coordinates $x,y$.
+\end{itemize}
+
+These are related by the following system of 14 polynomial equations:
+
+$$
+\scriptsize
+\begin{array}{|c|l|l|}
+\hline
+\textbf{eqns.} & \textbf{description} & \textbf{zero set of} \\
+\hline
+3 & \text{vertices on the EB} & (x_i/a)^2 + (y_i/b)^2 - 1\;,i = 1,2,3 \\
+\hline
+3 & \begin{array}{l} \text{reflection law at $P_j$} \\ j,k,\ell\;\text{cyclic}, \mathcal{A}=\text{diag}(1/a^2;1/b^2)\end{array} &
+\begin{array}{l}
+(\mathcal{A} P_j . P_{\ell}- \mathcal{A} P_j.P_j)(P_k-P_j)^2 \\
+\;\;\;-(\mathcal{A} P_j . P_k -  \mathcal{A} P_j . P_j) (P_{\ell} - P_j )^2
+\end{array} \\
+\hline
+3 & \text{sidelengths} & (x_i-x_j)^2 + (y_i-y_j)^2 -  s_k^2 \\
+\hline
+2 & \text{locus Cartesians, \eqref{eqn:trilin-cartesian}} & (p s_1 + q s_2 + r s_3) (x, y) - p s_1 P_1 + q s_2 P_2 + r s_3 P_3 \\
+\hline
+3 & \text{trilinears (must rationalize)} & p - h(s_1, s_2, s_3);\; q- h(s_2, s_3, s_1);\; r- h(s_3, s_1, s_2) \\
+\hline
+\end{array}
+$$
+
+Billiard Integrability (Appendix~\ref{app:billiards}) implies that out of the first 6 equations, one is functionally dependent on the rest. Therefore, we have 13 independent equations in 14 variables, yielding a 1d algebraic variety, which can be complexified if desired.
+
+Can tools from computational Algebraic Geometry \cite{Schenck2003-GA,Sturmfels97-resultants} be used to eliminate 12 variables automatically, thus obtaining a single polynomial equation $\mathcal{L}(x,y)=0$ whose Zariski closure contains the locus? Below we provide a method based on the theory of resultants \cite{lang,Sturmfels97-resultants} to compute $\mathcal{L}$ for a subset of Triangle Centers.
+
+\subsection{When Trilinears are Rational}
+\label{sec:rational-trilinears}
+
+Consider a Triangle Center $X$ whose Trilinears $p:q:r$ are rational on the sidelengths $s_1,s_2,s_3$, i.e., the Triangle Center Function $h$ is rational, equation \eqref{eqn:ftrilins}.
+
+\begin{theorem}
+The locus of a rational triangle center is an algebraic curve.
+\label{thm:rational-center}
+\end{theorem}
+
+Our proof is based on the following 3-steps which yield an algebraic curve $\mathcal{L}(x,y)=0$ which contains the locus. We refer to Lemmas \ref{lem:1coord} and \ref{lem:2sides} appearing below. Appendix~\ref{app:rational-support} contains  supporting expressions.
+
+\begin{proof}
+
+\begin{step}
+Introduce the symbolic variables $u, u_1, u_2$:
+
+\begin{equation*}
+    u^2 + u_1^2 = 1,\;\;\;\rho_1\, u^2 + u_2^2 = 1.
+\end{equation*} % \smallskip
+
+\end{step}
+ 
+\noindent The vertices will be given by rational functions of   $u, u_1, u_2$ 
+\begin{equation*} P_1 = (a\,u, b\,u_1),\;\;P_2 = (p_{2x}, p_{2y})/q_2,\;\;\;P_3 = (p_{3x}, p_{3y})/q_3 
+\end{equation*}
+ 
+\noindent Expressions for $P_1,P_2,P_3$ appear in Appendix \ref{app:rational-support} as do equations $g_i=0$, $i=1,2,3$, polynomial in $ s_i,u,u_1,u_2$.
+ 
+\begin{step}Express the locus  $X$ as a  rational function on  $u,u_1, u_2, s_1, s_2, s_3$.
+\end{step}
+
+Convert $p:q:r$ to Cartesians $ X = (x,y)$ via Equation~\eqref{eqn:trilin-cartesian}. From Lemma~\ref{lem:1coord}, it follows that
+$\left(x,y\right)$ is rational on $u,u_1,u_2,s_1,s_2,s_3$.
+
+\begin{equation*} x=\mathcal{Q}/\mathcal{R},\;\;\;y=\mathcal{S}/\mathcal{T}
+\end{equation*}
+
+\noindent To obtain the polynomials    $\mathcal{Q,R,S,T}$  on said variables $u,u_1,u_2,s_1,s_2,s_3$,
+ one substitutes the 
+$p,q,r$ by the corresponding rational functions of  $s_1, s_2, s_3$ that define a specific Triangle Center $X$. Other than that, the method proceeds identically.
+
+\begin{step}
+Computing resultants.
+Our problem is now cast in terms of the polynomial equations:
+
+\begin{equation*}
+E_0= \mathcal{Q}-x\,\mathcal{R}=0,\;\;\; F_0= \mathcal{S}-y\,\mathcal{T}=0
+\end{equation*}
+
+\end{step}
+
+%Let $g_1$, $g_2$ and $g_3$ be the polynomials in Appendix~\ref{app:alg_locus}. 
+Firstly, compute the resultants, in chain fashion:  
+
+\begin{align*}
+    E_1=&\textrm{Res}(g_1,E_0,s_1)=0,\;\;\;F_1=\textrm{Res}(g_1,F_0,s_1)=0\\
+	E_2=&\textrm{Res}(g_2,E_1,s_2)=0,\;\;\;F_2=\textrm{Res}(g_2,F_1,s_2)=0\\
+	E_3=&\textrm{Res}(g_3,E_2,s_3)=0,\;\;\;F_3=\;\textrm{Res}(g_3,F_2,s_3)=0
+\end{align*}
+		 
+It follows that  $E_3(x,u,u_1,u_2)=0$ and $F_3(y,u,u_1,u_2)=0$ are polynomial
+equations. In other words, $s_1, s_2, s_3$ have been eliminated. 
+
+Now  eliminate the variables $u_1$ and $u_2$ by taking the following resultants:
+
+\begin{align*}
+	E_4(x,u,u_2)=&\textrm{Res}(E_3,u_1^2+u^2-1,u_1)=0\\ 	F_4(y,u,u_2)=&\textrm{Res}(F_3,u_1^2+u^2-1,u_1)=0\\
+	E_5(x,u)=&\textrm{Res}(E_4,u_2^2+\rho_1 u^2-1,u_2)=0\\
+	F_5(y,u)=&\textrm{Res}(F_4,u_2^2+\rho_1 u^2-1,u_2)=0
+\end{align*}
+
+This yields two polynomial equations $E_5(x,u)=0$ and $F_5(y,u)=0$. 
+
+Finally compute the resultant
+$$ {\mathcal L} = \textrm{Res}(E_5,F_5,u)=0
+$$
+that eliminates $u$ and gives  the implicit algebraic equation for the locus $X$. 
+\end{proof}
+
+\begin{remark}
+In practice,  after  obtaining  a resultant, a human assists the CAS by factoring out spurious branches
+(when recognized), in order to get the final answer in more reduced form.   
+\end{remark}
+
+When not rational in the sidelengths, except a few cases\footnote{For instance Hofstadter points $X(359), X(360)$.}, Triangle Centers
+in Kimberling's list have explicit Trilinears involving fractional powers and/or terms containing the triangle area. Those can be made implicit, i.e,
+given by zero sets of polynomials involving $p,q,r, s_1, s_2, s_3$.  The chain of resultants to be computed will be increased by three, in order to eliminate the variables $p,q, r$ before (or after) $s_1, s_2, s_3$.
+
+\subsubsection{Supporting Lemmas}
+\label{sec:supporting-lemmas}
+
+\begin{lemma}
+\label{lem:1coord}
+Let $P_1=({a}{u},b\sqrt{1-u^2}).$
+	The coordinates of $P_2$ and $P_3$ of the 3-periodic billiard orbit are rational functions in the variables $u, u_1, u_2$, where
+	$u_1=\sqrt{1-u^2}$, $u_2=\sqrt{1-\rho_1 u^2}$ 
+	% and %$u_3=\sqrt{1-\rho_2u^2}$,
+and
+	$\rho_1=c^4(b^2+\delta)^2/a^6$. % and $\rho_2= (a^2-b^2)/a^2$.
+		
+	\end{lemma}
+	
+	\begin{proof}
+	Follows directly from the parametrization of the billiard orbit, Appendix~\ref{app:p1p2p3}. In fact,  $P_2=(x_2(u),y_2(u)) =( p_{2x}/q_2, p_{2y}/q_2)$ and $P_3=(x_3(u),y_3(u))$ $=( p_{3x}/q_3, p_{3y}/q_3)$, where $p_{2x}$, $p_{2y}$, $p_{3x}$ and $p_{3y}$ have degree $4$ in $(u,u_1,u_2)$  and $q_2$, $q_3$ are algebraic of degree $4$ in $u$. Expressions for $u_1,u_2$ appear in Appendix~\ref{app:exit-angle}.
+\end{proof}
+	
+\begin{lemma}
+\label{lem:2sides} Let $P_1=(a u,b\sqrt{1-u^2}).$ Let $s_1$, $s_2$ and $s_3$ the sides of the triangular orbit ${P_1}{P_2}{P_3}$. Then $g_1(u,s_1)=0$, $g_2(s_2,u_2,u)=0$ and $g_3(s_3,u_2,u)=0$ for polynomial functions $g_i$.  
+\end{lemma}
+	
+\begin{proof}
+Using the parametrization of the 3-periodic billiard orbit it follows that $s_1^2-|P_2-P_3|^2=0$ is a rational equation in the variables $u,s_1$. Simplifying, leads to $g_1(s_1,u)=0.$
+
+Analogously for $s_2$ and $s_3$. In this case, the equations $s_2^2-|P_1-P_3|^2=0$ and  $s_3^2-|P_1-P_2|^2=0$   have   square roots $u_2=\sqrt{1-\rho_1 u^2}$ and $u_1=\sqrt{1-u^2}$ and  are rational in the variables $s_2,u_2,u_1,u$ and $s_3,u_2,u_1,u$ respectively. It follows that the degrees of $g_1$, $g_2$, and $g_3$ are $10$.  Simplifying, leads to $g_2(s_2,u_2,u_1,u)=0 $ and $g_3(s_3,u_2,u_1,u)=0$. 
+\end{proof}
+
+\subsection{Examples}
+
+Table~\ref{tab:zariski} shows the Zariski closure obtained contained the elliptic locus of a few Triangle Centers. Notice one factor is always of the form $[(x/a_i)^2+(y/b_i)^2)-1]^3$, related to the triple cover described in Section~\ref{sec:triple-winding}. The expressions shown required some manual simplification during the symbolic calculations. 
+
+\begin{table}
+$$
+\scriptsize
+\begin{array}{|c|l|l|l|l|l|}
+\hline
+X_i & \text{Name} & \text{Spurious Factors} & \text{Elliptic Factor} & a_i & b_i \\
+\hline
+1 & \text{Incenter} & \text{very long expression} & \begin{array}{l}
+[36 (91 + 61 \sqrt{61}) x^2 \\
++ 324 (139 + 19 \sqrt{61}) y^2 \\
++ 22761 - 3969 \sqrt{61}]^6
+\end{array} & 0.63504 & 0.29744 \\
+\hline
+2 & \text{Barycenter} & \begin{array}{l} (91500x^2\\
++49922\sqrt{61}-370993)^2 \end{array} & \begin{array}{l} (100x^2\\+225y^2\\
++52\sqrt{61}-413)^3 \end{array} & 0.26205 & 0.1747 \\
+\hline
+3 & \text{Circumcenter} & \begin{array}{l}
+x\\(3600 x^4-6380 x^2-1539)\\
+(40 x^2+5\sqrt{61}-43)^2\\
+\begin{array}{l}
+(-1104500 y^2\\+591136\sqrt{61}-4633685)^2\end{array}\\
+(65880x^2+8527\sqrt{61}-64649)^6 \end{array} & \begin{array}{l}
+(5832 x^2\\
++(2752-320\sqrt{61}) y^2\\5751-729\sqrt{61})^3 \end{array} & 0.099146 & 0.4763\\
+\hline
+\end{array}
+$$
+\caption{Method of Resultants applied to obtain the Zariski closure for a few sample Triangle Centers with elliptic loci, for the specific case of $a/b=1.5$. Both spurious and an elliptic factor are present. The latter are raised to powers multiple of three suggesting a phenomenon related to the triple cover, Section~\ref{sec:triple-winding}. Also shown are semi-axes $a_i,b_i$ implied by the elliptic factor. These have been checked to be in perfect agreement with the values predicted for those semi-axes in \cite{garcia2019-incenter}.}
+\label{tab:zariski}
+\end{table}
+

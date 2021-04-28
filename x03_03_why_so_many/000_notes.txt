@@ -1,0 +1,41 @@
+Dear Prof. Kontorovich
+
+As explained in a recent email, the current submission is an improved, and significantly shorter version of our submission UEXM-2020-0013 which was rejected.
+
+We have implemented most of referee 1's suggestions, reducing page count from 32 to 23 (30%), edit notes appear below. Recall the other referee strongly supported acceptance.
+
+As discussed in the email we would be thankful for reconsidering the article for publication in its new version.
+
+Sincerely, the authors
+
+Ronaldo Garcia, Dan Reznik, Jair Koiller
+Goiania and Rio de Janeiro, Brazil
+
+Edit log:
+
+0) with the changes below, the page count has been reduced 30% from the original 32 pages down to 23 + 1/3.
+
+1) removed tabular results from the appendices and placed them in a companion website: https://github.com/dan-reznik/why-so-many-ellipses
+
+2) eliminated lemma 3 (it is now a note of lemma 
+
+3) in section 4.3, following the reviewer's request, added theorem 3 making it explicit for a generic rational triangle center when its locus is algebraic.
+
+4) though the reviewer requested we eliminate lemmas 4 and 5 (now numbered 3,4), they are now essential for the proof of theorem 3, recently added.
+
+5) rewrote, simplified abstract and introduction.
+
+6) added a paragraph to the introduction stating that though we start with Kimberling's list, our main interest is a method which which can predict locus type based on the function specifying the triangle center.
+
+7) moved section 2 (which reviewed earlier results) to the appendices.
+
+8) moved references to the end
+
+9) added "app" and "video" clickable links to most figures.
+
+10) the 1st referee requested we eliminate negative examples, such as the quartic locus of X6 in section 2.4, but we felt it is crucial to show example to illustrate the diversity of loci so we kept it (it only consumes one page).
+
+11) for space reduction, removed two appendices which only contained tabular results and moved them to a public webpage.
+
+12) the second referee requested we include one proof for a specific triangle center. We feel this is already done in section 3, specifically, see Table 4.
+

@@ -1,0 +1,62 @@
+Let a Circumconic have center $M=(x_m,y_m)$ Equation~\eqref{eqn:e0} is subject to the following 5 constraints\footnote{If $M$ is set to $X_9$ one obtains the Circumbilliard.}: it must be satisfied for vertices $P_1,P_2,P_3$, and its gradient must vanish at $M$:
+
+\begin{align*}
+f(P_i)=&\;0,\;\;\;i=1,2,3\\
+\frac{dg}{dx}(x_m,y_m)=&\;c_1+c_3 y_m+2c_4 x_m=0\\
+\frac{dg}{dy}(x_m,y_m)=\;&c_2+c_3 x_m+2c_5 y_m=0
+\end{align*}
+
+Written as a linear system:
+
+$$
+\left[
+\begin{array}{ccccc}
+x_1&y_1&x_1 y_1&x_1^2&y_1^2\\
+x_2&y_2&x_2 y_2&x_2^2&y_2^2\\
+x_3&y_3&x_3 y_3&x_3^2&y_3^2\\
+1&0&y_m&2\,x_m&0\\
+0&1&x_m&0&2\,y_m
+\end{array}
+\right] .
+\left[\begin{array}{c}c_1\\c_2\\c_3\\c_4\\c_5\end{array}\right] =
+\left[\begin{array}{c}-1\\-1\\-1\\0\\0\end{array}\right]
+$$
+
+Given sidelenghts $s_1,s_2,s_3$, the coordinates of $X_9=(x_m,y_m)$ can be obtained by converting its Trilinears $\left(s_2 + s_3 - s_1 :: ...\right)$ to Cartesians \cite{etc}. 
+
+Principal axes' directions are given by the eigenvectors of the Hessian matrix $H$ (the jacobian of the gradient), whose entries only depend on $c_3$, $c_4$, and $c_5$:
+
+\begin{equation}
+H = J(\nabla{g})=\left[\begin{array}{cc}2\,c_4&c_3\\c_3&2\,c_5\end{array}\right]
+\label{eqn:hessian}
+\end{equation}
+
+The ratio of semiaxes' lengths is given by the square root of the ratio of $H$'s eigenvalues:
+
+\begin{equation}
+a/b=\sqrt{\lambda_2/\lambda_1}
+\label{eqn:ratiolambda}
+\end{equation}
+
+Let $U=(x_u,y_u)$ be an eigenvector of $H$. The length of the semiaxis along $u$ is given by the distance $t$ which satisfies:
+
+$$
+g(M + t\,U) = 0
+$$
+
+This yields a two-parameter quadratic $d_0 + d_2 t^2$, where:
+
+$$
+\begin{array}{cll}
+d_0 & = & 1 + c_1 x_m + c_4 x_m^2 + c_2 y_m + c_3 x_m y_m + c_5 y_m^2 \\ 
+d_2 & = & c_4 x_u^2 + c_3 x_u y_u + c_5 y_u^2
+\end{array}
+$$
+
+The length of the semi-axis associated with $U$ is then $t=\sqrt{-d_0/d_2}$. The other axis can be computed via \eqref{eqn:ratiolambda}.
+
+The eigenvectors (axes of the conic) of $H$ are given by the  zeros of the quadratic form
+\begin{align*}
+   q(x,y)= c_3(y^2-x^2)+2(c_2-c_5)xy
+\end{align*}
+

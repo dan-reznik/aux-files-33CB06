@@ -1,0 +1,92 @@
+Here we consider 3-periodics inscribed in a circle and circumscribing a non-concentric ellipse. We will work in the complex plane and apply Blaschke Product techniques \cite{daepp-2019} which simplify our parametrization. Namely, 3-periodic vertices become symmetric with respect to the information of the circle-ellipse pair.
+
+As a first step, identify points in $\R^2$ with points in the complex plane $\Cp$. Let $\D$ denote the open unit disk $\{z\in\Cp : |z|<1\}$ and $\T$ denote the unit circle $\{z\in\Cp : |z|=1\}$. By translation and scaling, we may assume the outer circle of the pair to be the unit circle $\T$. Let $\{f,g\}$ be the two foci of the inner ellipse. As in \cite{daepp-2019}, define:
+
+\begin{definition}{Degree-3 Blaschke Product} 
+
+\[
+B(z):=z\left( \frac{z-f}{1-\ol f z}\right) \left( \frac{z-g}{1-\ol g z}\right)
+\]
+
+\end{definition}
+
+\noindent Note that if one wants to study the concentric setting, just substitute $g=-f$.
+
+Following chapter 4 of \cite{daepp-2019}, for each $\l\in\T$, the three solutions of $B(z)=\l$ are the vertices of a 3-periodic orbit of the Poncelet family of triangles in the complex plane, and as $\l$ varies in $\T$, the whole family of triangles is covered. Clearing the denominator in this equation and passing everything to the left-hand side, we get
+
+\[
+z^3-(f+g+\l\ol{f} \ol{g})z^2+(f g+\l(\ol f+\ol g))z-\l=0
+\]
+
+Let $z_1,z_2,z_3\in\Cp$ denote the vertices of Poncelet 3-periodics in the pair with   circumcircle. Using Viète's formula, we obtain the following parametrization of the elementary symmetric polynomials on $z_1,z_2,z_3$:
+
+\begin{definition}[Blaschke's Parametrization]
+\begin{align*}
+    \sigma_1:=z_1+z_2+z_3=& f+g+\l\ol f \ol g \\
+    \sigma_2:=z_1 z_2+z_2 z_3+z_3 z_1=& f g+\l(\ol f+\ol g) \\
+    \sigma_3:=z_1 z_2 z_3=& \l
+\end{align*}
+where $f,g$ are the foci of the inner ellipse and $\l\in\T$ is the varying parameter.
+\label{def:bla}
+\end{definition}
+
+Referring to Figure~\ref{fig:nonconcentric-circumcircle-circular-loci-right-tris}:
+
+\begin{proposition}
+If a triangle center $\X\ab=\alpha X_2+ \beta X_3$ is a fixed linear combination of $X_2$ and $X_3$ for some $\alpha,\beta\in\mathbb{C}$, its locus over 3-periodics in the non-concentric pair with a circumcircle is a circle centered on $\mathcal{O}_\alpha$ and of radius $\mathcal{R}_\alpha$ given by:
+
+\[ \mathcal{O}_\alpha = \frac{\alpha(f+g)}{3},\;\;\; \mathcal{R}_\alpha =\frac{|\alpha f g|}{3}\]
+\label{prop:LinComb-concentric}
+\end{proposition}
+
+\begin{observation}
+Notice that the center and radius of the locus do not depend on $\beta$ since the circumcenter $X_3$ is stationary at the origin of this system.
+\end{observation}
+
+\begin{proof}
+Since, $z_1,z_2,z_3$ are the 3 vertices of the Poncelet triangle inscribed in the unit circle, its barycenter and circumcenter are given by $X_2=(z_1+z_2+z_3)/3$ and $X_3=0$, respectively. We define $\X\ab:=\alpha X_2+ \beta X_3=\alpha (z_1+z_2+z_3)/3$. Using Definition~\ref{def:bla}, we get $\X\ab=\alpha(f+g+\l \ol{f}\ol{g})/3=\alpha(f+g)/3+\l(\alpha \ol{f}\ol{g})/3$, where the parameter $\l$ varies on the unit circle $\T$. Thus, the locus of $\X_{\gamma}$ over the Poncelet family of triangles is a circle with center $\mathcal{O}_{\alpha}:=\alpha(f+g)/3$ and radius $\mathcal{R}_{\alpha}:=|\alpha \ol{f}\ol{g}|/3=|\alpha f g|/3$.
+\end{proof}
+
+Using $\alpha=1-\gamma, \beta=\gamma$ for a fixed $\gamma\in\R$ in Proposition \ref{prop:LinComb-concentric}, we get:
+
+\begin{corollary}
+ If a triangle center $\X_\gamma=(1-\gamma) X_2+ \gamma X_3$ is a real affine combination of $X_2$ and $X_3$ for some $\gamma\in\R$, its locus over 3-periodics in the non-concentric pair with a circumcircle is a circle. Moreover, as we vary $\gamma$, the centers of these loci are collinear with the fixed circumcenter.
+ \label{cor:gamma-with-circumcircle}
+\end{corollary}
+
+Many triangle centers in \cite{etc} are affine combinations of the barycenter $X_2$ and circumcenter $X_3$. See Observation \ref{obs:affine-euler-line} for a compilation of them.
+
+\begin{observation}
+For a generic triangle, only $X_{98}$, and $X_{99}$ are simultaneously on the Euler line and on the circumcircle. However these are not linear combinations of $X_2$ and $X_3$. Still, if a triangle center is always on the circumcircle of a generic triangle (there are many of these, see \cite[Circumcircle]{mw}), its locus over 3-periodics in the non-concentric pair with circumcircle is trivially a circle.
+\end{observation}
+
+ 
+\begin{corollary}
+ Over the family of 3-periodics inscribed in a circle and circumscribing a non-concentric inellipse centered at $O_c$, the locus of $X_k$, $k$ in 2,4,5,20 are circles whose centers are collinear. The locus of $X_5$ is centered on $O_c$. The centers and radii of these circular loci are given by:
+
+\begin{alignat*}{4}
+    O_2&=\frac{f+g}{3},\quad& O_4&=f+g,\quad&O_5&=\frac{f+g}{2},\quad&O_{20}&=-(f+g)\\
+    r_2&=\frac{|f g|}{3},\quad&r_4 &= |f g|,\quad&r_5 &= \frac{|f g|}{2},\quad& r_{20}&= |f g|
+\end{alignat*}
+
+\end{corollary}
+
+\begin{proof}
+As in Corollary \ref{cor:gamma-with-circumcircle}, we can use Proposition \ref{prop:LinComb-concentric} with $\gamma=0,-2,-1/2,4$ to get the center and radius for $X_2,X_4,X_5,X_{20}$, respectively. All of these centers are real multiples of $f+g$, so they are all collinear. Moreover, the center $O_5$ of the circular loci of $X_5$ is $(f+g)/2$, that is, the midpoint of the foci of the inellipse, or in other words, the center $O_c$ of the inellipse.
+\end{proof}
+ 
+Referring to Figure~\ref{fig:nonconcentric-circumcircle-circular-loci-right-tris}:
+
+\begin{observation}
+The family of 3-periodics in the pair with circumcircle includes obtuse triangles if and only if $X_3$ is exterior to the caustic. \end{observation}
+
+This is due to the fact that when $X_3$ is interior to the caustic, said triangle center can never be exterior to the 3-periodic. Conversely, if $X_3$ is exterior, it must also be external to some 3-periodic, rendering the latter obtuse.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{pics/0128_n3_circumcircle_pair.eps}
+    \caption{\textbf{Left:} 3-periodic family (blue) in the pair with circumcircle where the caustic contains $X_3$, i.e., all 3-periodics are acute. The loci of $X_4$ and $X_{20}$ are interior to the circumcircle. \textbf{Right:} $X_3$ is exterior to the caustic, and 3-periodics can be either acute or obtuse. Equivalently, the locus of $X_4$ intersects the circumcircle. In both cases (left and right), the loci of $X_k$, $k$ in 2,4,5,20 are circles with collinear centers (magenta line). The locus of $X_5$ is centered on $O_c$. The center of the $X_2$ locus is at $2/3$ along $O O_c$. \href{https://youtu.be/HXgJQo2UT_8}{Video}}
+    \label{fig:nonconcentric-circumcircle-circular-loci-right-tris}
+\end{figure} 
+
+

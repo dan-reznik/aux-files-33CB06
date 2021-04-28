@@ -1,0 +1,102 @@
+Let the boundary of the Billiard satisfy Equation~\eqref{eqn:billiard-f}. Assume, without loss of generality, that $a{\geq}b$. Here we provide expressions used in Section~\ref{sec:algebraic}. Let $P_1,P_2,P_3$ be an orbit's vertices.
+
+\subsection{Exit Angle Required for 3-Periodicity}
+\label{app:exit-angle}
+
+Consider a starting point $P_1=(x_1,y_1)$ on a Billiard with semi-axes $a,b$. The cosine of the exit angle $\alpha$ (measured with respect to the normal at $P_1$\footnote{i.e., $\alpha=\theta_1/2$.}) required for the trajectory to close after 3 bounces is given by \cite{garcia2019-incenter}: 
+
+%\begin{equation}
+%\label{eqn:cosalpha}
+%\cos{\alpha}={\frac {a^2 b \, \sqrt {2 \delta-{a}^{2}-{b}^{2}}}{{c}^{2}\sqrt {{a}^{4}-{c}^{2} x_1^{2}}}}, \;\; c^2=a^2-b^2,\;\; \delta=\sqrt{a^4-a^2b^2+b^4}\,.
+%\end{equation}
+\begin{equation*}
+\cos^2{\alpha}=\frac{d_1^2\delta_1^2}{\,d_2}=k_1,\;\;\;\sin{\alpha}\cos\alpha=\frac{ \delta_1d_1^2}{d_2 }\sqrt{ d_2 -d_1^4\delta_1^2}=k_2
+\label{eqn:cosalpha}
+\end{equation*}
+
+\noindent with 
+$c^2=a^2-b^2$, $d_1=(a\,b/c)^2$, $d_2={b}^{4}x_1^2 +{a}^{4}y_1^2$, $\delta=\sqrt{a^4+b^4-a^2 b^2}$, and $\delta_1=\sqrt{2 \delta-a^2-b^2}$.
+
+\subsection{Orbit Vertices}
+\label{app:p1p2p3}
+Given a starting vertex $P_1=(x_1,y_1)$ on the EB, $P_2=(p_{2x},p_{2y})/q_2$, and $P_3=(p_{3x},p_{3y})/q_3$ where \cite{garcia2019-incenter}:
+
+\begin{align*}
+\small
+%\label{eqn:p2}
+p_{2x}=&-{b}^{4} \left(  \left(   a^2+{b}^{2}\right)k_1 -{a}^{2}  \right) x_1^{3}-2\,{a}^{4}{b}^{2} k_2  x_1^{2}{y_1}\\
+&+{a}^{4} \left(  ({a
+}^{2}-3\, {b}^{2})k_1+{b}^{2}
+ \right) {x_1}\,y_1^{2}-2{a}^{6} k_2 y_1^{3}\\
+p_{2y}=& 2{b}^{6} k_2 x_1^{3}+{b}^{4}\left(  ({b
+ }^{2}-3\, {a}^{2}) k_1  +{a}^{2}
+  \right) x_1^{2}{y_1}\\
+&+  2\,{a}^{2} {b}^{4}k_2 {x_1} y_1^{2} -{
+a}^{4}  \left(  \left(   a^2+{b}^{2}\right)k_1  -{b}^{2}  \right)  y_1^{3}
+\\
+q_2=&{b}^{4} \left( a^2-c^2k_1   \right)
+x_1^{2}+{a}^{4} \left(  {b}^{2}+c^2k_1  
+ \right) y_1^{2} - 2\, {a}^{2}{b}^{2}{c^2}k_2 {x_1}\,{
+y_1} \\
+p_{3x}=& {b}^{4} \left( {a}^{2}- \left( {b}^{2}+{a}^{2} \right) \right)
+ k_1  x_1^{3} +2\,{a}^{4}{b}^{2}k_2  x_1^{2}{ y_1}\\
+ &+{a}^{4} \left( 
+  k_1 \left( {a}^{2}-3\,{b}^{2}
+ \right) +{b}^{2} \right) { x_1}\, y_1^{2} +2\, {a}^{6} k_2 y_1^{3}
+\\
+p_{3y}=& -2\, {b}^{6} k_2 x_1^{3}+{b}^{4} \left( {a}^{2}+ \left( {b}^{2}-3\,{a}^{2} \right)    k_1 \right) {{ x_1}}^{2}{ y_1}
+\\
+& -2\,{a}^{2}  {b}^{4} k_2  x_1 y_1^{2}+
+ {a}^{4} \left( {b}^{2}- \left( {b}^{2}+{a}^{2} \right)   k_1 \right)\,  y_1^{3},
+\\
+q_3=& {b}^{4} \left( {a}^{2}-{c^2}k_1   \right) x_1^{2}+{a}^{4} \left( {b}^{2}+c^2k_1  \right)  y_1^{2}+2\,{a}^{2}{b}^{
+2} c^2 k_2\, { x_1}\,{ y_1}.
+\end{align*}
+
+\subsection{Polynomials Satisfied by the Sidelengths}
+\label{app:alg_locus}
+
+Let sidelengths $s_1=|P_3-P_2|, s_2=|P_1-P_3|,s_3=|P_2-P_1|$. The following are polynomial expressions on $s_i$ and $u,u_1,u_2$:
+
+ {\small  
+	\begin{align*}
+		g_1=&    -h_1 \, s_1^2 
+		+h_0,\;\;g_2=- h_1\, s_2^2 -
+		h_2 \,u_1 \,u_2 +h_3,\;\;\;g_3=- h_1 \,s_3^2 + h_2\,  u_1\, u_2+h_3\\
+		h_0=& 12c^{12}(a^2+b^2+2\delta)u^8+24c^{10}(a^2b^2+2b^4-2\delta c^2 u^6\\
+		-&4c^4[10a^{10}-12a^8b^2+11a^6b^4-7a^4b^6+24a^2b^8-8b^{10}\\
+		-&  (2(4a^4-2a^2b^2+b^4))(a^4-2a^2b^2+4b^4)
+		\delta
+		]u^4\\
+		+&8a^6 c^2[4a^6-7a^4b^2+11a^2b^4-2b^6-(2(a^2+ab+b^2))(a^2-ab+b^2)\delta]u^2\\
+		+&4a^{12} \delta_1^2	\\
+		h_1=&  c^2\left(3c^4 u^4-2c^2(a^2-2b^2 u^2-a^4)\right)^2\\
+		h_2=&-2{a(b^2-\delta)}\delta_1 u ((3 c^6 \delta+(6 (a^2+b^2)) c^6) u^6+((3 (a^2+4 b^2)) c^4 \delta \\
+		-& (3 (2 a^4-a^2 b^2-4 b^4)) c^4) u^4
+		+( (b_2-a^2 ) (7 a^4-8 b^4) \delta\\
+		+& 2 c^2  (a^2-2 b^2) (a^4-2 b^4)) u^2+a^4 (a^2-4 b^2) \delta-a^4 (2 a^4-3 a^2 b^2+4 b^4))\\
+		h_3=&c^6 (9 c^{6} u^{10}+ 1)((18 (a^4+b^4))  \delta-(3 (7 a^6-16 a^4 b^2+29 a^2 b^4-8 b^6)) u^8\\
+		+&2c^2\left[     (13 a^8-12 a^6 b^2+49 a^4 b^4-54 a^2 b^6+16 b^8)\right.\\
+		-& \left. 2   (10 a^6-7 a^4 b^2+11 a^2 b^4-8 b^6) \delta 
+		\right] u^6\\
+		+&((28a^4\delta^2-40 a^2 b^6+16 b^8) \delta 
+		-  26 a^{10}+12 a^8 b^2+42 a^4 b^6-48 a^2 b^8+16 b^{10}) u^4\\
+		+&a(13 a^6-9 a^4 b^2-8 b^4c^2 -(4 (2 a^4+a^2 b^2-2 b^4)) \delta)^4 u^2+2 a^8 ( \delta-a^8
+		 c^2)
+	\end{align*}
+	}%
+	
+%\subsection{Simplifying $P_2$, $P_3$}
+
+%\begin{align*}
+%[&(a\delta_1\delta_2c^2)(2a^2-b^2+\delta)u^2+a^3\delta_1\delta_2(b^2+\delta)]u_1u_2\\
+%+&ac^4(2a^4+b^4-2a^2\delta-b^2\delta)u^3-a^3c^2(2a^4-2a^2b^2+b^4-2a^2\delta+b^2\delta)u
+%\end{align*}
+
+%\begin{equation*}
+%\delta_1=\sqrt{2 %\delta-a^2-b^2},\;\;\;\delta_2=\sqrt{a^6-a^4b^2+2a^2b^4-2a^2b^2\delta}
+%\end{equation*}
+
+
+%, and it is a quotient of two polynomials
+

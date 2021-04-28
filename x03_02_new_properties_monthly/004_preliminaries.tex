@@ -1,0 +1,44 @@
+Let the boundary of the elliptic billiard satisfy
+
+\begin{equation}
+\label{eqn:billiard-f}
+f(x,y)=\left(\frac{x}{a}\right)^2+\left(\frac{y}{b}\right)^2=1,\;\;\;a>b.
+\end{equation}
+
+Joachimsthal's integral implies that every trajectory segment is tangent to the caustic \cite{sergei91}. Equivalently, a positive quantity $\gamma$ (called $J$ in \cite{akopyan2020-invariants,bialy2020-invariants}) remains invariant, whether the trajectory is closed or not, at every bounce point $P_i$:
+
+\begin{equation}
+ \gamma=\frac{1}{2}\hat{v}.\nabla{f_i}=\frac{1}{2}|\nabla{f_i}|\cos\alpha,
+ \label{eqn:joachim}
+\end{equation}
+
+\noindent where $\hat{v}$ is the unit incoming (or outgoing) velocity vector, and
+
+\begin{equation*}
+\nabla{f_i}=2\left(\frac{x_i}{a^2}\,,\frac{y_i}{b^2}\right).
+\label{eqn:fnable}
+\end{equation*}
+
+Consider a starting point $P_1=(x_1,y_1)$ on the boundary of the elliptic billiard. The the exit angle $\alpha$ (measured with respect to the normal at $P_1$) required for the trajectory to close after 3 bounces is given by \cite{garcia2019-ellipses}: 
+
+\begin{equation}
+\cos{\alpha}={\frac {a^2 b \, \sqrt {2 \delta-{a}^{2}-{b}^{2}}}{{c}^{2}\sqrt {{a}^{4}-{c}^{2} x_1^{2}}}}, \;\; c^2=a^2-b^2,\;\; \delta=\sqrt{a^4-a^2b^2+b^4}\,.
+\label{eqn:cosalpha}
+\end{equation}
+
+\noindent Note: Regarding the quantity $\delta$, see Theorem~\ref{thm:power_delta} (below) for a nice geometric interpretation. \\
+
+Choosing $P_1=(a,0)$, we derive $\gamma$ based on equations~\eqref{eqn:joachim} and \eqref{eqn:cosalpha}:
+
+\begin{equation}
+\gamma=\frac{\sqrt{2\delta-a^2-b^2}}{c^2}.
+\end{equation}
+
+\noindent When $a=b$, $\gamma=\sqrt{3}/2$ and when $a/b{\to}\infty$, $\gamma{\to}0$. \noindent Using explicit expressions for the orbit vertices \cite{garcia2019-ellipses} (reproduced in Appendix~\ref{app:orbit-vertices}), we derive the perimeter $L=s_1+s_2+s_3$: 
+
+\begin{equation}
+L=2(\delta+a^2+b^2)\gamma.
+\label{eqn:perimeter}
+\end{equation}
+
+\noindent Incidentally, quantity $\delta$ has the following geometric interpretation: it is the power of $X_9$ with respect to the orbit's circumcircle.

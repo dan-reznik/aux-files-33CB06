@@ -1,0 +1,54 @@
+Let a triangle $T$ have vertices $P_1=(0,0)$, $P_2=(1,0)$ and $P_3=(u,v)$ and sidelengths $s_1,s_2,s_3$. Using the linear system in Appendix~\ref{app:circum-linear}, one can obtain implicit equations for the circumellipses $E_9,E_1,E_2$ centered on $T$'s Mittenpunkt $X_9$, Incenter $X_1$, and Barycenter $X_2$, respectively:
+
+\begin{align*}
+E_9(x,y)=&  v^2 x^2-v(s_1 -s_2-1+2u)xy+((s_1-s_2-1)u+u^2+s_2 )y^2\\
+-&v^2x+((s_1-s_2-1)u+u^2+s_2)y^2+v(u-s_2)y=0\\
+%
+E_1(x,y)=&  \left( L-2 \right) {v}^{2}{x}^{2} + \left( L-2\,{ s_2}-2\,u
+ \right)   \left( L-2 \right) v\, xy \\
+ +& \left( 
+-{L}^{2}u+ \left( 2\,u+1 \right) L{ s_2}+ \left( {u}^{2}+2\,u
+ \right) L-2\,{s_2}^{2}-4\,u{ s_2}-2\,{u}^{2} \right) {y}^{2}\\
+ -& \left( L-2 \right) {v}^{2} x
+ - v\left( L{ s_2}-uL-2\,{s_2}^{2}+2\,u \right) y 
+\\
+E_2(x,y)=&v^2x^2+v(1-2u)xy+(u^2-u+1)y^2-v^2x+v(u-1)y=0\\
+s_1=& \sqrt{(u-1)^2+v^2},\;\;\; s_2=\sqrt{u^2+v^2}, \;\;\; L=s_1+s_2+1
+\end{align*}
+
+Consider the quadratic forms
+\begin{align*}
+    q_9(x,y)=&   v\left(  { s_1}\, -{ s_2}\, +2 u  -1 \right) {x}^{2}+ 2\left(  (s_2-s_1)u
+ - { s_2} - \,{u}^{2}+ u+  {v}^{2}
+ \right) xy\\
+ +& v\left( 1-2u - { s_1}\, +{ s_2}\,    \right) {y}^{2}
+ \\
+ q_1(x,y)=& -v \left( L-2 \right)  \left( L-2\,{ s_2}-2\,u \right) {x}^{2}+v  \left( L-2 \right)  \left( L-2\,{ s_2}-2\,u\right)y^2 \\
+ +&
+2 (  L^2u-(2u+1)Ls_2+(v^2-u^2-2u)L+ 4s_2u+4u^2 ) xy\\
+q_2(x,y)=&v(2u+1)x^2+2(-u^2+v^2+u-1)xy+v(1-2u)y^2
+\end{align*}
+
+The axes of $E_9$ (resp. $E_1$) are defined by the zeros of $q_9$ (resp. $q_1$). Using the above equations it is straightforward to show that the axes of $E_1$ and $E_9$ are parallel.
+
+The axes of $E_2$ and $E_9$ are parallel if and only if $(u-1)^2+v^2=1$ or $u^2+v^2=1$; this means that the triangle is isosceles.
+
+The implicit equations of the circumhyperbolas $F $ passing through the vertices of the orbit centered on $X_{11}$ and   $J_{exc} $ passing through the vertices of the excentral triangle and centered on $X_{100}$ are:
+{\small 
+\begin{align*}
+F(x,y)=& v^3(2 u  -1) (x^2-y^2)+  v^3(1-2u)x\\
++&[( s_2^3+(u-1) s_2^2-u s_2) s_1+(2u-1)s_2^2-us_1^2s_2 -u^4-4 u^2 v^2+v^4+2 uv^2] x y\\
+ +&[ s_1^2 u^2  s_2+(-u  s_2^3-u (u-1)  s_2^2+ s_2 u^2)  s_1+u  s_2^4-v^2  s_2^2-u^3 (2 u-1)]y=0\\
+ J_{exc}(x,y)=&  4v^3\left( 2\,u -1\, \right) ({x}^{2}-y^2)\\
+ +& [ \left( 4\,s_2^{3}+ 4\left(  u-1
+ \right)     s_2 ^{2}-4\,u{   s_2} \right) {   s_1}  -4\,u 
+   s_1 ^{2}{   s_2} -4\,    s_2 ^{2} \\
+   -&4\,{u}^{4}-16\,{
+u}^{2}{v}^{2}+4\,{v}^{4}+8\,{u}^{3}+16\,u{v}^{2}
+ ] xy\\
+ +&[ (2 (- s_1  s_2^3+( (1- s_1) u-v^2+ s_1)  s_2^2+u  s_1 ( s_1+1)  s_2+u (u-2) s_1^2)) v]x\\
+ +&[ (4-4 u) s_2  ((u^2-( \frac{1}{2} s_1 +1) u+ \frac{1}{2} s_1 +\frac{1}{2}) s_2 + \frac{1}{2} u s_1  (s_1 +1)- \frac{1}{2} s_2 ^2 (s_2 +s_1 ))]y\\
+   -& u  s_1^2 v  s_2+(v  s_2^3+(-1+u) v  s_2^2-u v  s_2)  s_1+v  s_2^4-(2 u^2-2 u+1) v  s_2^2=0
+\end{align*}
+}
+ Using the above equations it is straightforward to show that the axes of $E_9$ and asymptotes  of $F $ and $J_{exc} $ are parallel.
